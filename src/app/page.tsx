@@ -21,7 +21,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            About Services FAQ's
+            About Services FAQs
           </a>
         </div>
       </div>
