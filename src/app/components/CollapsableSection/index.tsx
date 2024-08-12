@@ -1,51 +1,68 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import classNames from "classnames";
 import CircleMinus from "@/app/icons/circle-minus";
 import CirclePlus from "../../icons/circle-plus";
 import Heading from "../Heading";
 
 type Props = {
   isOpen?: boolean;
-  children: React.ReactElement;
+  className?: string;
+  children: React.ReactNode;
   sectionTitle: string;
 };
 
 export default function CollapsableSection(props: Props) {
-  const { children, isOpen, sectionTitle } = props;
+  const { children, className, isOpen, sectionTitle } = props;
 
   const [open, setOpen] = useState(isOpen || false);
 
-  console.log("Enrique isOpen", open);
-
   const clickHandler = useCallback(() => setOpen(!open), [open, setOpen]);
+
+  const Icon = open ? CircleMinus : CirclePlus;
+
+  const getHeading = (): React.ReactNode => {
+    if (typeof sectionTitle === "string") {
+      return (
+        <Heading
+          className="pl-4 text-md md:text-2xl text-gray-900"
+          label={sectionTitle}
+        />
+      );
+    } else {
+      return sectionTitle;
+    }
+  };
 
   return (
     <details
-      className="bg-white p-12 rounded-xl transition-transform"
+      className={classNames(
+        "bg-white py-4 px-4 md:px-6 md:py-6 rounded-xl ",
+        className
+      )}
       open={isOpen}
     >
-      <summary className="flex items-center mb-4">
-        <div className="flex items-center" onClick={clickHandler}>
-          {open ? (
-            <CircleMinus
-              className="w-12 h-12 text-brand-green hover:text-green-700 transition-colors duration-150"
-              strokeWidth={2}
-            />
-          ) : (
-            <CirclePlus
-              className="w-12 h-12 text-brand-green hover:text-green-700 transition-colors duration-150"
-              strokeWidth={2}
-            />
-          )}
-          <Heading
-            className="pl-4 text-gray-900 cursor-pointer"
-            level="3xl"
-            label={sectionTitle}
+      <summary
+        className={classNames(
+          "flex items-center cursor-pointer transition-all duration-1000 ease-out open:mb-10",
+          {
+            ["mb-4"]: open,
+          }
+        )}
+        onClick={clickHandler}
+      >
+        <div className="flex items-center">
+          <Icon
+            className="w-6 h-6 md:w-10 md:h-10 text-brand-green hover:text-green-700 transition-colors duration-150"
+            strokeWidth={2}
           />
+          {getHeading()}
         </div>
       </summary>
-      {children}
+      <div className="transition-transform ease-in-out duration-150 open:ease-in-out">
+        {children}
+      </div>
     </details>
   );
 }

@@ -13,7 +13,7 @@ export default function Button(props: Props) {
   return (
     <button
       className={classNames(
-        "text-grey text-xl font-medium rounded-full",
+        "text-grey font-medium rounded-full",
         {
           ["bg-brand-green"]: type === "primary",
           ["border border-brand-green"]: type === "nude",

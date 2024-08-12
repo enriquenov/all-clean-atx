@@ -3,15 +3,14 @@ import Image from "next/image";
 import Button from "./components/Button";
 import Heading from "./components/Heading";
 import Navbar from "./components/Navbar";
-import CirclePlus from "./icons/circle-plus";
-import CollapsableSection from "./components/CollapsableSection";
+import ServicesSection from "./components/ServicesSection";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main className="flex min-h-screen flex-col items-center justify-between">
-        <div className="my-20 mx-60 grid grid-cols-2 gap-4 sm:grid-cols-2">
+        <div className="my-8 md:my-20 mx-8 sm:mx-10 md:mx-20 max-w-7xl grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-2">
           <div className="rounded-3xl overflow-hidden">
             <Image
               src="/cleaning-lady-cover.png"
@@ -23,76 +22,67 @@ export default function Home() {
             />
           </div>
           <div className="flex items-center justify-center">
-            <div className=" flex flex-col w-4/5 text-center items-center">
-              <h1 className="text-3xl font-bold mb-10">
+            <div className=" flex flex-col md:w-4/5 text-center items-center">
+              <h1 className="font-bold text-xl md:text-3xl mb-2 md:mb-10">
                 GUARANTEED TO LEAVE IT
                 <br /> ALL CLEAN
               </h1>
-              <p className="w-4/5 mb-10 text-xl font-normal">
-                We clean your boossies in an out,
-                <br />
-                because we know you don't like to!
+              <p className="w-4/5 mb-4 md:mb-10 text-sm md:text-xl font-normal">
+                We clean your houses in an out, because we know you don't like
+                to!
               </p>
               <Button
                 type="primary"
-                className="text-white px-5 py-3"
+                className="text-xs md:text-md lg:text-xl text-white px-3 py-2 md:px-5 md:py-3"
                 label="GET A QUOTE"
               />
             </div>
           </div>
         </div>
 
-        <div className="min-h-96 bg-brand-light-green mx-20 w-4/5 rounded-3xl p-12 mb-20">
+        <div className="min-h-96 bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-4/5 rounded-3xl p-6 md:p-12 mb-10 md:mb-20">
           <Heading
-            className="mb-12 text-center"
+            className="mb-6 md:mb-12 text-xl md:text-4xl text-center"
             label="We are AllClean ATX"
-            level="4xl"
           />
-          <div className="grid grid-cols-4 gap-8 sm:grid-cols-4">
-            <div className="bg-white min-h-[220px] rounded-xl p-12">
-              Lorem ipsum something rather. Lorem ipsum something rather. Lorem
-              ipsum something rather.
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:gap-8">
+            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center">
+              Lorem ipsum
             </div>
-            <div className="bg-white min-h-[220px] rounded-xl p-12">
-              Lorem ipsum something rather. Lorem ipsum something rather. Lorem
-              ipsum something rather.
+            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center">
+              Lorem ipsum
             </div>
-            <div className="bg-white min-h-[220px] rounded-xl p-12">
-              Lorem ipsum something rather. Lorem ipsum something rather. Lorem
-              ipsum something rather.
+            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center">
+              Lorem ipsum
             </div>
-            <div className="bg-white min-h-[220px] rounded-xl p-12">
-              Lorem ipsum something rather. Lorem ipsum something rather. Lorem
-              ipsum something rather.
+            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center">
+              Lorem ipsum
             </div>
           </div>
         </div>
 
-        <div className="w-4/5 min-h-96 shadow-standard rounded-3xl p-12 mb-20">
-          <Heading align="left" level="4xl" label="Placeholder section" />
+        <div className="min-h-96 shadow-standard rounded-3xl mx-6 w-[calc(100%-3rem)] md:w-4/5 p-6 md:p-12 mb-10 md:mb-20">
+          <Heading
+            align="left"
+            className="text-4xl"
+            label="Placeholder section #1"
+          />
         </div>
 
-        <div className="w-4/5 min-h-96 bg-brand-light-green rounded-3xl p-12 mb-20">
+        {/*******************************
+         ******* Services Section *******
+         *******************************/}
+
+        <div className="bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-4/5 rounded-3xl p-6 md:p-12 mb-10 md:mb-20">
+          <ServicesSection />
+        </div>
+
+        <div className="min-h-96 shadow-standard rounded-3xl mx-6 md:w-4/5 p-6 md:p-12 mb-10 md:mb-20">
           <Heading
-            className="mb-8"
-            align="center"
-            level="3xl"
-            label="Our services"
+            align="left"
+            className="text-4xl"
+            label="Placeholder section #2"
           />
-          <CollapsableSection sectionTitle="Standard" isOpen={true}>
-            <div className="grid grid-cols-2 gap-8 lg:grid-cols-2 ">
-              <div>
-                <div>LEFT CONTAINER</div>
-                <div>LEFT CONTAINER</div>
-                <div>LEFT CONTAINER</div>
-              </div>
-              <div>
-                <div>RIGHT CONTAINER</div>
-                <div>RIGHT CONTAINER</div>
-                <div>RIGHT CONTAINER</div>
-              </div>
-            </div>
-          </CollapsableSection>
         </div>
 
         {/* <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
