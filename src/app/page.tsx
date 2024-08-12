@@ -28,8 +28,8 @@ export default function Home() {
                 <br /> ALL CLEAN
               </h1>
               <p className="w-4/5 mb-4 md:mb-10 text-sm md:text-xl font-normal">
-                We clean your houses in an out, because we know you don't like
-                to!
+                We clean your houses in an out, because we know you don&apos;t
+                like to!
               </p>
               <Button
                 type="primary"
