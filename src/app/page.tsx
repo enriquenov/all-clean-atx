@@ -15,7 +15,6 @@ export default function Home() {
             <Image
               src="/cleaning-lady-cover.png"
               alt="Cover photo of a cleaning lady"
-              className="dark:invert"
               width={800}
               height={120}
               priority
