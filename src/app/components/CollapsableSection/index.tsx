@@ -51,7 +51,7 @@ export default function CollapsableSection(props: Props) {
     >
       <summary
         className={classNames(
-          "list-none flex items-center cursor-pointer transition-all duration-1000 ease-out open:mb-10",
+          "flex items-center cursor-pointer transition-all duration-1000 ease-out open:mb-10",
           {
             ["mb-4"]: open,
           }

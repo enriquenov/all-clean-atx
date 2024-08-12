@@ -8,6 +8,7 @@
     list-style: none;
   }
 
+  summary,
   li {
     list-style-type: none;
   }
