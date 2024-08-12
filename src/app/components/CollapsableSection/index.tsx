@@ -60,7 +60,7 @@ export default function CollapsableSection(props: Props) {
       >
         <div className="flex items-center">
           <Icon
-            className="w-6 h-6 md:w-10 md:h-10 text-brand-green hover:text-green-700 transition-colors duration-150"
+            className="w-6 h-6 md:w-10 md:h-10 text-brand-green hover:text-green-700 transition-colors duration-150 pointer-events-none"
             strokeWidth={2}
           />
           {getHeading()}
