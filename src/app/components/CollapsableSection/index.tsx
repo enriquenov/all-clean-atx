@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, type MouseEventHandler } from "react";
 import classNames from "classnames";
 import CircleMinus from "@/app/icons/circle-minus";
 import CirclePlus from "../../icons/circle-plus";
@@ -18,7 +18,13 @@ export default function CollapsableSection(props: Props) {
 
   const [open, setOpen] = useState(isOpen || false);
 
-  const clickHandler = useCallback(() => setOpen(!open), [open, setOpen]);
+  const clickHandler: any = useCallback(
+    (e: Event) => {
+      e.stopPropagation();
+      setOpen(!open);
+    },
+    [open, setOpen]
+  );
 
   const Icon = open ? CircleMinus : CirclePlus;
 
@@ -45,7 +51,7 @@ export default function CollapsableSection(props: Props) {
     >
       <summary
         className={classNames(
-          "flex items-center cursor-pointer transition-all duration-1000 ease-out open:mb-10",
+          "list-none flex items-center cursor-pointer transition-all duration-1000 ease-out open:mb-10",
           {
             ["mb-4"]: open,
           }
