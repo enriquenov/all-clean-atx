@@ -4,12 +4,19 @@ import Button from "../Button";
 import Hamburger from "@/app/icons/hamburger";
 
 type Props = {
+  isAboutSectionVisible: boolean;
+  isServicesSectionVisible: boolean;
   scrollToAbout?: () => void;
   scrollToServices?: () => void;
 };
 
 export default function Navbar(props: Props) {
-  const { scrollToAbout, scrollToServices } = props;
+  const {
+    isAboutSectionVisible,
+    isServicesSectionVisible,
+    scrollToAbout,
+    scrollToServices,
+  } = props;
 
   return (
     <div className="sticky bg-brand-cream z-50 top-0 px-2 sm:px-4 md:px-10 lg:px-20 xl:px-40 py-2 md:py-3 shadow-lg flex justify-between">
@@ -22,11 +29,17 @@ export default function Navbar(props: Props) {
       </div>
       <div className="flex items-center">
         <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8">
-          <Button className="px-4 py-2" label="About" onClick={scrollToAbout} />
+          <Button
+            className="px-4 py-2"
+            label="About"
+            onClick={scrollToAbout}
+            underline={isAboutSectionVisible}
+          />
           <Button
             className="px-4 py-2"
             label="Services"
             onClick={scrollToServices}
+            underline={isServicesSectionVisible}
           />
           <Button className="px-4 py-2" label="FAQ's" />
         </div>

@@ -6,6 +6,7 @@ import Button from "./components/Button";
 import Heading from "./components/Heading";
 import Navbar from "./components/Navbar";
 import ServicesSection from "./components/ServicesSection";
+import useOnScreen from "./hooks/useOnScreen";
 
 export default function Home() {
   const aboutRef = useRef<null | HTMLDivElement>(null);
@@ -17,10 +18,11 @@ export default function Home() {
     let aboutY = 0;
 
     if (aboutRef?.current?.getBoundingClientRect()) {
-      aboutY += aboutRef?.current?.getBoundingClientRect().top;
+      aboutY +=
+        aboutRef?.current?.getBoundingClientRect().top +
+        window.scrollY +
+        scrollIntoViewOffset;
     }
-
-    aboutY += window.scrollY + scrollIntoViewOffset;
 
     window.scrollTo({ top: aboutY, behavior: "smooth" });
   }, [scrollIntoViewOffset]);
@@ -29,17 +31,23 @@ export default function Home() {
     let servicesY = 0;
 
     if (servicesRef?.current?.getBoundingClientRect()) {
-      servicesY += servicesRef?.current?.getBoundingClientRect().top;
+      servicesY +=
+        servicesRef?.current?.getBoundingClientRect().top +
+        window.scrollY +
+        scrollIntoViewOffset;
     }
-
-    servicesY += window.scrollY + scrollIntoViewOffset;
 
     window.scrollTo({ top: servicesY, behavior: "smooth" });
   }, [scrollIntoViewOffset]);
 
+  const isAboutSectionVisible = useOnScreen(aboutRef);
+  const isServicesSectionVisible = useOnScreen(servicesRef);
+
   return (
     <>
       <Navbar
+        isAboutSectionVisible={isAboutSectionVisible}
+        isServicesSectionVisible={isServicesSectionVisible}
         scrollToAbout={scrollToAbout}
         scrollToServices={scrollToServices}
       />
