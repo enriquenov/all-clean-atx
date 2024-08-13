@@ -3,18 +3,30 @@ import classNames from "classnames";
 
 type Props = {
   className?: string;
-  label: string;
+  label?: string;
+  children?: React.ReactNode;
+  id?: string;
   onClick?: () => void;
+  role?: string;
   type?: "primary" | "nude" | "secondary";
   underline?: boolean;
 };
 
 export default function Button(props: Props) {
-  const { className, label, type, onClick, underline = false } = props;
+  const {
+    children,
+    className,
+    label,
+    type,
+    role,
+    onClick,
+    underline = false,
+  } = props;
 
   return (
     <>
       <button
+        type="button"
         className={classNames(
           "text-grey font-medium rounded-full relative",
           {
@@ -26,8 +38,10 @@ export default function Button(props: Props) {
           className
         )}
         onClick={onClick}
+        role={role}
       >
         {label}
+        {children}
       </button>
       {/* {underline && <div className="w-10 border-b-2 border-b-brand-green" />} */}
     </>

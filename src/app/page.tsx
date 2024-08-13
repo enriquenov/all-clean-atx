@@ -12,7 +12,7 @@ export default function Home() {
   const aboutRef = useRef<null | HTMLDivElement>(null);
   const servicesRef = useRef<null | HTMLDivElement>(null);
 
-  const scrollIntoViewOffset = -150;
+  const scrollIntoViewOffset = -120;
 
   const scrollToAbout = useCallback(() => {
     let aboutY = 0;
