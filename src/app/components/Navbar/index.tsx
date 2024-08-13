@@ -33,6 +33,8 @@ export default function Navbar(props: Props) {
 
   const isMenuVisible = useOnScreen(menuRef);
 
+  console.log("Enrique printing isMenuVisible", isMenuVisible);
+
   const aboutButton = (
     <Button
       className="px-4 py-2"
@@ -88,7 +90,10 @@ export default function Navbar(props: Props) {
           className="md:ml-8 text-xs lg:text-md lg:text-xl text-white px-3 py-2 md:px-5 md:py-3"
           label="GET A QUOTE"
         />
-        <div ref={menuRef} className="relative inline-block text-left ml-4">
+        <div
+          ref={menuRef}
+          className="relative inline-block lg:hidden text-left ml-4"
+        >
           <Button
             className="inline-flex justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900"
             id="menu-button"
