@@ -2,13 +2,13 @@ import React, { useCallback, useRef, useState } from "react";
 import classNames from "classnames";
 import Image from "next/image";
 import Button from "../Button";
-import Hamburger from "@/app/icons/hamburger";
-import useOutsideClick from "@/app/hooks/useOutsideClick";
-import useOnScreen from "@/app/hooks/useOnScreen";
+import Hamburger from "@/icons/hamburger";
+import useOutsideClick from "@/hooks/useOutsideClick";
+import useOnScreen from "@/hooks/useOnScreen";
 
 type Props = {
-  isAboutSectionVisible: boolean;
-  isServicesSectionVisible: boolean;
+  isAboutSectionVisible?: boolean;
+  isServicesSectionVisible?: boolean;
   scrollToAbout?: () => void;
   scrollToServices?: () => void;
 };
@@ -32,8 +32,6 @@ export default function Navbar(props: Props) {
   useOutsideClick(menuRef, () => setIsMenuOpen(false));
 
   const isMenuVisible = useOnScreen(menuRef);
-
-  console.log("Enrique printing isMenuVisible", isMenuVisible);
 
   const aboutButton = (
     <Button
@@ -64,9 +62,10 @@ export default function Navbar(props: Props) {
       className={classNames("px-4 py-2", {
         ["ml-8"]: !isMenuVisible,
       })}
-      label="FAQ's"
+      label="FAQ"
       id={isMenuVisible ? "menu-item-2" : undefined}
       role={isMenuVisible ? "menuitem" : undefined}
+      href="/faqs"
     />
   );
 
@@ -115,7 +114,6 @@ export default function Navbar(props: Props) {
               tabIndex={-1}
             >
               <div className="py-1" role="none">
-                {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
                 {aboutButton}
                 {servicesButton}
                 {faqsButton}

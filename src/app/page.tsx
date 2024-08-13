@@ -2,11 +2,11 @@
 
 import React, { useCallback, useRef } from "react";
 import Image from "next/image";
-import Button from "./components/Button";
-import Heading from "./components/Heading";
-import Navbar from "./components/Navbar";
-import ServicesSection from "./components/ServicesSection";
-import useOnScreen from "./hooks/useOnScreen";
+import Button from "../components/Button";
+import Heading from "../components/Heading";
+import Navbar from "../components/Navbar";
+import ServicesSection from "../components/ServicesSection";
+import useOnScreen from "../hooks/useOnScreen";
 
 export default function Home() {
   const aboutRef = useRef<null | HTMLDivElement>(null);

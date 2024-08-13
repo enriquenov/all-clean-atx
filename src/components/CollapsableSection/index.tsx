@@ -2,7 +2,7 @@
 
 import { useState, useCallback, type MouseEventHandler } from "react";
 import classNames from "classnames";
-import CircleMinus from "@/app/icons/circle-minus";
+import CircleMinus from "@/icons/circle-minus";
 import CirclePlus from "../../icons/circle-plus";
 import Heading from "../Heading";
 

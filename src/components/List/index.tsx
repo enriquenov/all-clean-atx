@@ -1,6 +1,6 @@
 import * as React from "react";
 import Heading from "../Heading";
-import CheckCircle from "@/app/icons/check-circle";
+import CheckCircle from "@/icons/check-circle";
 
 type Props = {
   className?: string;

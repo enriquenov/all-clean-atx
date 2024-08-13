@@ -1,5 +1,6 @@
 import * as React from "react";
 import classNames from "classnames";
+import Link from "next/link";
 
 type Props = {
   className?: string;
@@ -10,12 +11,14 @@ type Props = {
   role?: string;
   type?: "primary" | "nude" | "secondary";
   underline?: boolean;
+  href?: any;
 };
 
 export default function Button(props: Props) {
   const {
     children,
     className,
+    href,
     label,
     type,
     role,
@@ -23,9 +26,11 @@ export default function Button(props: Props) {
     underline = false,
   } = props;
 
+  const Component = href ? Link : "button";
+
   return (
     <>
-      <button
+      <Component
         type="button"
         className={classNames(
           "text-grey font-medium rounded-full relative",
@@ -39,11 +44,11 @@ export default function Button(props: Props) {
         )}
         onClick={onClick}
         role={role}
+        href={href}
       >
         {label}
         {children}
-      </button>
-      {/* {underline && <div className="w-10 border-b-2 border-b-brand-green" />} */}
+      </Component>
     </>
   );
 }
