@@ -20,7 +20,7 @@ export default function Button(props: Props) {
           {
             ["bg-brand-green"]: type === "primary",
             ["border border-brand-green"]: type === "nude",
-            ["before:content-[''] before:block before:transition-all duration-150 ease-in-out before:absolute before:left-1 before:bottom-0 before:w-[calc(100%-0.5rem)] before:border-b-4 before:border-b-brand-green"]:
+            ["before:content-[''] before:block before:transition-all duration-150 ease-in-out before:absolute before:left-0 before:bottom-0 before:w-full before:border-b-4 before:border-b-brand-green"]:
               underline,
           },
           className

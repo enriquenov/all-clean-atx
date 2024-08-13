@@ -28,7 +28,7 @@ export default function Navbar(props: Props) {
         />
       </div>
       <div className="flex items-center">
-        <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8">
+        <div className="hidden lg:block">
           <Button
             className="px-4 py-2"
             label="About"
@@ -36,12 +36,12 @@ export default function Navbar(props: Props) {
             underline={isAboutSectionVisible}
           />
           <Button
-            className="px-4 py-2"
+            className="px-4 py-2 ml-8"
             label="Services"
             onClick={scrollToServices}
             underline={isServicesSectionVisible}
           />
-          <Button className="px-4 py-2" label="FAQ's" />
+          <Button className="px-4 py-2 ml-8" label="FAQ's" />
         </div>
         <Button
           type="primary"
