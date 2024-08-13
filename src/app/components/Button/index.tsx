@@ -2,13 +2,14 @@ import * as React from "react";
 import classNames from "classnames";
 
 type Props = {
-  label: string;
   className?: string;
+  label: string;
+  onClick?: () => void;
   type?: "primary" | "nude" | "secondary";
 };
 
 export default function Button(props: Props) {
-  const { type, className, label } = props;
+  const { className, label, type, onClick } = props;
 
   return (
     <button
@@ -20,6 +21,7 @@ export default function Button(props: Props) {
         },
         className
       )}
+      onClick={onClick}
     >
       {label}
     </button>

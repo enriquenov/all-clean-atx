@@ -27,6 +27,7 @@ export default function ServicesSection() {
               items={STANDARD.kitchen.items}
             />
             <List
+              className="mb-8 md:mb-0"
               title={STANDARD.bathroom.title}
               items={STANDARD.bathroom.items}
             />

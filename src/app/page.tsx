@@ -1,4 +1,6 @@
-import * as React from "react";
+"use client";
+
+import React, { useCallback, useRef } from "react";
 import Image from "next/image";
 import Button from "./components/Button";
 import Heading from "./components/Heading";
@@ -6,9 +8,41 @@ import Navbar from "./components/Navbar";
 import ServicesSection from "./components/ServicesSection";
 
 export default function Home() {
+  const aboutRef = useRef<null | HTMLDivElement>(null);
+  const servicesRef = useRef<null | HTMLDivElement>(null);
+
+  const scrollIntoViewOffset = -150;
+
+  const scrollToAbout = useCallback(() => {
+    let aboutY = 0;
+
+    if (aboutRef?.current?.getBoundingClientRect()) {
+      aboutY += aboutRef?.current?.getBoundingClientRect().top;
+    }
+
+    aboutY += window.scrollY + scrollIntoViewOffset;
+
+    window.scrollTo({ top: aboutY, behavior: "smooth" });
+  }, [scrollIntoViewOffset]);
+
+  const scrollToServices = useCallback(() => {
+    let servicesY = 0;
+
+    if (servicesRef?.current?.getBoundingClientRect()) {
+      servicesY += servicesRef?.current?.getBoundingClientRect().top;
+    }
+
+    servicesY += window.scrollY + scrollIntoViewOffset;
+
+    window.scrollTo({ top: servicesY, behavior: "smooth" });
+  }, [scrollIntoViewOffset]);
+
   return (
     <>
-      <Navbar />
+      <Navbar
+        scrollToAbout={scrollToAbout}
+        scrollToServices={scrollToServices}
+      />
       <main className="flex min-h-screen flex-col items-center justify-between">
         <div className="my-8 md:my-20 mx-8 sm:mx-10 md:mx-20 max-w-7xl grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-2">
           <div className="rounded-3xl overflow-hidden">
@@ -39,23 +73,34 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="min-h-96 bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-4/5 rounded-3xl p-6 md:p-12 mb-10 md:mb-20">
+        <div
+          ref={aboutRef}
+          className="min-h-96 bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-4/5 rounded-3xl p-6 md:p-12 mb-10 md:mb-20"
+        >
           <Heading
             className="mb-6 md:mb-12 text-xl md:text-4xl text-center"
             label="We are AllClean ATX"
           />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:gap-8">
-            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center">
-              Lorem ipsum
+          <p className="text-lg mb-6 text-center">
+            All Clean ATX is a premiere cleaning company in Austin, Texas. We
+            are committed to provide high quality services, and we believe in
+            doing an outstanding job. We use eco-friendly products and guarantee
+            satisfaction and reliability, going above and beyond to ensure you
+            get your time back and your home is worry-free. Contact us today for
+            a quote!
+          </p>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center flex items-center justify-items-center">
+              Our customers are our passion
             </div>
-            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center">
-              Lorem ipsum
+            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center flex items-center justify-items-center">
+              We advocate for our employees
             </div>
-            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center">
-              Lorem ipsum
+            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center flex items-center justify-items-center">
+              Accountability is important to us
             </div>
-            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center">
-              Lorem ipsum
+            <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center flex items-center justify-items-center">
+              We support the communities in which we live
             </div>
           </div>
         </div>
@@ -72,7 +117,10 @@ export default function Home() {
          ******* Services Section *******
          *******************************/}
 
-        <div className="bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-4/5 rounded-3xl p-6 md:p-12 mb-10 md:mb-20">
+        <div
+          ref={servicesRef}
+          className="bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-4/5 rounded-3xl p-6 md:p-12 mb-10 md:mb-20"
+        >
           <ServicesSection />
         </div>
 
