@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, type MouseEventHandler } from "react";
+import { useState, useCallback } from "react";
 import classNames from "classnames";
 import CircleMinus from "@/icons/circle-minus";
 import CirclePlus from "../../icons/circle-plus";
@@ -13,7 +13,7 @@ type Props = {
   sectionTitle: string;
 };
 
-export default function CollapsibleSection(props: Props) {
+export default function CollapsibleBox(props: Props) {
   const { children, className, isOpen, sectionTitle } = props;
 
   const [open, setOpen] = useState(isOpen || false);
@@ -32,7 +32,7 @@ export default function CollapsibleSection(props: Props) {
     if (typeof sectionTitle === "string") {
       return (
         <Heading
-          className="pl-4 text-md md:text-2xl text-gray-900"
+          className="pl-4 text-md md:text-xl text-gray-900"
           label={sectionTitle}
         />
       );

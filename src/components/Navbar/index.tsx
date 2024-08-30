@@ -66,58 +66,60 @@ export default function Navbar() {
   );
 
   return (
-    <div className="sticky bg-brand-cream z-50 top-0 px-2 sm:px-4 md:px-10 lg:px-20 xl:px-40 py-2 md:py-3 shadow-lg flex justify-between">
-      <div className="relative w-36 h-12 lg:w-72 lg:h-24">
-        <Link href="/">
-          <Image
-            src="/aca-logo-black-green.svg"
-            alt="AllClean ATX Logo"
-            layout="fill"
-          />
-        </Link>
-      </div>
-      <div className="flex items-center">
-        <div className="hidden lg:block">
-          {aboutButton}
-          {servicesButton}
-          {faqsButton}
-        </div>
-        <Button
-          type="primary"
-          className="md:ml-8 text-xs lg:text-md lg:text-xl text-white px-3 py-2 md:px-5 md:py-3"
-          label="GET A QUOTE"
-        />
-        <div
-          ref={menuRef}
-          className="relative inline-block lg:hidden text-left ml-4"
-        >
-          <Button
-            className="inline-flex justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900"
-            id="menu-button"
-            aria-expanded="true"
-            aria-haspopup="true"
-            onClick={onMenuClick}
-          >
-            <Hamburger
-              className="block lg:hidden text-gray-800 w-10 h-10"
-              strokeWidth={2}
+    <div className="sticky bg-brand-cream z-50 top-0 px-2 sm:px-4 md:px-10 lg:px-20 xl:px-40 py-2 md:py-3 shadow-lg">
+      <div className="max-w-7xl mx-auto flex justify-between">
+        <div className="relative w-36 h-12 lg:w-72 lg:h-24">
+          <Link href="/">
+            <Image
+              src="/aca-logo-black-green.svg"
+              alt="AllClean ATX Logo"
+              layout="fill"
             />
-          </Button>
-          {isMenuOpen && (
-            <div
-              className="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="menu-button"
-              tabIndex={-1}
+          </Link>
+        </div>
+        <div className="flex items-center">
+          <div className="hidden lg:block">
+            {aboutButton}
+            {servicesButton}
+            {faqsButton}
+          </div>
+          <Button
+            type="primary"
+            className="md:ml-8 text-xs lg:text-md lg:text-xl text-white px-3 py-2 md:px-5 md:py-3"
+            label="GET A QUOTE"
+          />
+          <div
+            ref={menuRef}
+            className="relative inline-block lg:hidden text-left ml-4"
+          >
+            <Button
+              className="inline-flex justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900"
+              id="menu-button"
+              aria-expanded="true"
+              aria-haspopup="true"
+              onClick={onMenuClick}
             >
-              <div className="py-1 flex flex-col" role="none">
-                {aboutButton}
-                {servicesButton}
-                {faqsButton}
+              <Hamburger
+                className="block lg:hidden text-gray-800 w-10 h-10"
+                strokeWidth={2}
+              />
+            </Button>
+            {isMenuOpen && (
+              <div
+                className="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="menu-button"
+                tabIndex={-1}
+              >
+                <div className="py-1 flex flex-col" role="none">
+                  {aboutButton}
+                  {servicesButton}
+                  {faqsButton}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>

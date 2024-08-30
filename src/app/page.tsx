@@ -8,8 +8,8 @@ import ServicesSection from "../components/ServicesSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="my-8 md:my-20 mx-8 sm:mx-10 md:mx-20 max-w-7xl grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-2">
+    <>
+      <div className="my-8 md:my-20 mx-8 sm:mx-10 md:mx-20 max-w-6xl grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-2">
         <div className="rounded-3xl overflow-hidden">
           <Image
             src="/cleaning-lady-cover.png"
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="min-h-96 bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-4/5 rounded-3xl p-6 md:p-12 mb-10 md:mb-20">
+      <div className="max-w-7xl min-h-96 bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-3/4 rounded-3xl p-6 md:p-12 mb-10 md:mb-20">
         <Heading
           className="mb-6 md:mb-12 text-xl md:text-4xl text-center"
           label="We are AllClean ATX"
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="min-h-96 shadow-standard rounded-3xl mx-6 w-[calc(100%-3rem)] md:w-4/5 p-6 md:p-12 mb-10 md:mb-20">
+      <div className="max-w-7xl min-h-96 shadow-standard rounded-3xl mx-6 w-[calc(100%-3rem)] md:w-3/4 p-6 md:p-12 mb-10 md:mb-20">
         <Heading
           align="left"
           className="text-4xl"
@@ -79,11 +79,11 @@ export default function Home() {
        ******* Services Section *******
        *******************************/}
 
-      <div className="bg-brand-light-green mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-4/5 rounded-3xl p-6 md:p-12 mb-10 md:mb-20">
+      <div className="bg-brand-light-green max-w-7xl mx-6 md:mx-20 w-[calc(100%-3rem)] md:w-3/4 rounded-3xl p-6 md:p-12 mb-10 md:mb-20">
         <ServicesSection />
       </div>
 
-      <div className="min-h-96 shadow-standard rounded-3xl mx-6 md:w-4/5 p-6 md:p-12 mb-10 md:mb-20">
+      <div className="max-w-7xl min-h-96 shadow-standard rounded-3xl mx-6 md:w-3/4 p-6 md:p-12 mb-10 md:mb-20">
         <Heading
           align="left"
           className="text-4xl"
@@ -109,6 +109,6 @@ export default function Home() {
             </p>
           </a>
         </div> */}
-    </main>
+    </>
   );
 }
