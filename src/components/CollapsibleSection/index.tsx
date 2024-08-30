@@ -13,7 +13,7 @@ type Props = {
   sectionTitle: string;
 };
 
-export default function CollapsableSection(props: Props) {
+export default function CollapsibleSection(props: Props) {
   const { children, className, isOpen, sectionTitle } = props;
 
   const [open, setOpen] = useState(isOpen || false);

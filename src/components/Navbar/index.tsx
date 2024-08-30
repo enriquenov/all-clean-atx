@@ -1,26 +1,17 @@
+"use client";
+
 import React, { useCallback, useRef, useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import Button from "../Button";
 import Hamburger from "@/icons/hamburger";
 import useOutsideClick from "@/hooks/useOutsideClick";
 import useOnScreen from "@/hooks/useOnScreen";
 
-type Props = {
-  isAboutSectionVisible?: boolean;
-  isServicesSectionVisible?: boolean;
-  scrollToAbout?: () => void;
-  scrollToServices?: () => void;
-};
-
-export default function Navbar(props: Props) {
-  const {
-    isAboutSectionVisible,
-    isServicesSectionVisible,
-    scrollToAbout,
-    scrollToServices,
-  } = props;
+export default function Navbar() {
+  const pathname = usePathname();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -34,39 +25,43 @@ export default function Navbar(props: Props) {
 
   const isMenuVisible = useOnScreen(menuRef);
 
+  const underlineHoverClass =
+    "hover:before:content-[''] hover:before:block transition-all duration-500 ease-in-out hover:before:absolute hover:before:left-0 hover:before:bottom-0 hover:before:w-full hover:before:border-b-4 hover:before:border-b-brand-green";
+
   const aboutButton = (
     <Button
-      className="px-4 py-2"
+      className={classNames("px-4 py-2", underlineHoverClass)}
       label="About"
-      onClick={scrollToAbout}
       role={isMenuVisible ? "menuitem" : undefined}
-      underline={!isMenuOpen && isAboutSectionVisible}
+      underline={!isMenuOpen && pathname === "/about"}
       id={isMenuVisible ? "menu-item-0" : undefined}
+      href="/about"
     />
   );
 
   const servicesButton = (
     <Button
-      className={classNames("px-4 py-2", {
+      className={classNames("px-4 py-2", underlineHoverClass, {
         ["ml-8"]: !isMenuVisible,
       })}
       label="Services"
       role={isMenuVisible ? "menuitem" : undefined}
-      onClick={scrollToServices}
-      underline={!isMenuOpen && isServicesSectionVisible}
+      underline={!isMenuOpen && pathname === "/services"}
       id={isMenuVisible ? "menu-item-1" : undefined}
+      href="/services"
     />
   );
 
   const faqsButton = (
     <Button
-      className={classNames("px-4 py-2", {
+      className={classNames("px-4 py-2", underlineHoverClass, {
         ["ml-8"]: !isMenuVisible,
       })}
       label="FAQ"
       id={isMenuVisible ? "menu-item-2" : undefined}
       role={isMenuVisible ? "menuitem" : undefined}
       href="/faqs"
+      underline={!isMenuOpen && pathname === "/faqs"}
     />
   );
 
@@ -116,7 +111,7 @@ export default function Navbar(props: Props) {
               aria-labelledby="menu-button"
               tabIndex={-1}
             >
-              <div className="py-1" role="none">
+              <div className="py-1 flex flex-col" role="none">
                 {aboutButton}
                 {servicesButton}
                 {faqsButton}

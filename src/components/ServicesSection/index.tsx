@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import CollapsableSection from "../CollapsableSection";
+import CollapsableSection from "../CollapsibleSection";
 import Heading from "../Heading";
 import { List } from "../List";
 import { STANDARD } from "./content";
