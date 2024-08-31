@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import classNames from "classnames";
 import Heading from "@/components/Heading";
 
 export default function Page() {
@@ -27,7 +26,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Scope"
       />
       <p>
@@ -39,7 +38,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Information Collection"
       />
       <div>
@@ -59,7 +58,7 @@ export default function Page() {
       </div>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Use of Information"
       />
       <div>
@@ -88,7 +87,7 @@ export default function Page() {
       </div>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Sharing Information"
       />
       <div>
@@ -115,7 +114,7 @@ export default function Page() {
       </div>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Business Transfers"
       />
       <p>
@@ -125,7 +124,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Legal Compliance and Protection"
       />
       <p>
@@ -136,7 +135,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Privacy Notices and Click-Through Agreements"
       />
       <p>
@@ -146,7 +145,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Security"
       />
       <p>
@@ -157,7 +156,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Children's Privacy"
       />
       <p>
@@ -167,7 +166,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Links to Other Websites"
       />
       <p>
@@ -180,7 +179,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Access to Your Information"
       />
       <p>
@@ -191,7 +190,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Retention of Personal Information"
       />
       <p>
@@ -201,7 +200,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Data Retention"
       />
       <p>
@@ -211,7 +210,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Cross-Border Data Transfer"
       />
       <p>
@@ -225,7 +224,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Governing Law"
       />
       <p>
@@ -234,7 +233,7 @@ export default function Page() {
       </p>
       <Heading
         align="left"
-        className="my-6 md:my-8 text-l md:text-2xl"
+        className="my-6 md:my-8 text-lg md:text-xl"
         label="Contact"
       />
       <p className="mb-4">

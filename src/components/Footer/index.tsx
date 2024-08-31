@@ -2,7 +2,6 @@
 
 import React from "react";
 import Button from "../Button";
-import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -12,8 +11,8 @@ export default function Footer() {
           <Button className="" href="/privacy-policy" type="link">
             Privacy Policy
           </Button>
-          <Button href="/" type="link">
-            Terms and Conditions
+          <Button href="/terms-of-use" type="link">
+            Terms of Use
           </Button>
         </div>
         <div className="flex flex-col">
