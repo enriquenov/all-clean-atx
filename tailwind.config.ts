@@ -19,6 +19,7 @@ const config: Config = {
         "brand-light-green": "#E5F7E5",
         "brand-new-green": "#b8d773",
         "primary-light-grey": "F7F7F7",
+        "secondary-grey": "#f8f8f9",
       },
       boxShadow: {
         standard: "0px 10px 36px rgba(18, 78, 120, 0.12)",

@@ -9,7 +9,7 @@ type Props = {
   id?: string;
   onClick?: () => void;
   role?: string;
-  type?: "primary" | "nude" | "secondary";
+  type?: "primary" | "nude" | "secondary" | "link";
   underline?: boolean;
   href?: any;
 };
@@ -39,6 +39,7 @@ export default function Button(props: Props) {
             ["border border-brand-green"]: type === "nude",
             ["before:content-[''] before:block before:transition-all duration-150 ease-in-out before:absolute before:left-0 before:bottom-0 before:w-full before:border-b-4 before:border-b-brand-green"]:
               underline,
+            ["hover:underline"]: type === "link",
           },
           className
         )}
