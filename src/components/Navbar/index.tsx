@@ -15,7 +15,7 @@ export default function Navbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const onMenuClick = useCallback(() => {
+  const toggleMenu = useCallback(() => {
     setIsMenuOpen(!isMenuOpen);
   }, [isMenuOpen, setIsMenuOpen]);
 
@@ -36,6 +36,7 @@ export default function Navbar() {
       underline={!isMenuOpen && pathname === "/about"}
       id={isMenuVisible ? "menu-item-0" : undefined}
       href="/about"
+      onClick={toggleMenu}
     />
   );
 
@@ -49,6 +50,7 @@ export default function Navbar() {
       underline={!isMenuOpen && pathname === "/services"}
       id={isMenuVisible ? "menu-item-1" : undefined}
       href="/services"
+      onClick={toggleMenu}
     />
   );
 
@@ -62,6 +64,7 @@ export default function Navbar() {
       role={isMenuVisible ? "menuitem" : undefined}
       href="/faqs"
       underline={!isMenuOpen && pathname === "/faqs"}
+      onClick={toggleMenu}
     />
   );
 
@@ -97,7 +100,7 @@ export default function Navbar() {
               id="menu-button"
               aria-expanded="true"
               aria-haspopup="true"
-              onClick={onMenuClick}
+              onClick={toggleMenu}
             >
               <Hamburger
                 className="block lg:hidden text-gray-800 w-10 h-10"
