@@ -10,9 +10,9 @@ export default function ServicesSection() {
   return (
     <>
       <Heading
-        className="mb-6 md:mb-8 text-xl md:text-3xl"
+        className="mb-6 md:mb-12 text-xl md:text-3xl"
         align="center"
-        label="Our services"
+        label="Our Services"
       />
       <CollapsableSection
         className="mb-8"
