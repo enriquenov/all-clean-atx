@@ -32,6 +32,7 @@ export default function CollapsibleBox(props: Props) {
     if (typeof sectionTitle === "string") {
       return (
         <Heading
+          align="left"
           className="pl-4 text-md md:text-xl text-gray-900"
           label={sectionTitle}
         />
@@ -44,7 +45,7 @@ export default function CollapsibleBox(props: Props) {
   return (
     <details
       className={classNames(
-        "bg-white py-4 px-4 md:px-6 md:py-6 rounded-xl ",
+        "bg-white p-3 md:px-6 md:py-6 rounded-xl ",
         className
       )}
       open={isOpen}
@@ -58,9 +59,9 @@ export default function CollapsibleBox(props: Props) {
         )}
         onClick={clickHandler}
       >
-        <div className="flex items-center">
+        <div className="flex items-start md:items-center mt-1 md:mt-0">
           <Icon
-            className="w-6 h-6 md:w-10 md:h-10 text-brand-green hover:text-green-700 transition-colors duration-150 pointer-events-none"
+            className="w-6 h-6 md:w-10 md:h-10 text-brand-green hover:text-green-700 transition-colors duration-150 pointer-events-none flex-shrink-0"
             strokeWidth={2}
           />
           {getHeading()}

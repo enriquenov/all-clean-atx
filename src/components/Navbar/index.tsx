@@ -67,8 +67,8 @@ export default function Navbar() {
 
   return (
     <div className="sticky bg-brand-cream z-50 top-0 px-2 sm:px-4 md:px-10 lg:px-20 xl:px-40 py-2 md:py-3 shadow-lg">
-      <div className="max-w-7xl mx-auto flex justify-between">
-        <div className="relative w-36 h-12 lg:w-72 lg:h-24">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="relative w-32 h-10 lg:w-72 lg:h-24">
           <Link href="/">
             <Image
               src="/aca-logo-black-green.svg"
@@ -77,7 +77,7 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center h-10">
           <div className="hidden lg:block">
             {aboutButton}
             {servicesButton}
@@ -90,7 +90,7 @@ export default function Navbar() {
           />
           <div
             ref={menuRef}
-            className="relative inline-block lg:hidden text-left ml-4"
+            className="relative inline-block lg:hidden text-left ml-2 lg:ml-4"
           >
             <Button
               className="inline-flex justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900"
