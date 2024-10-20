@@ -4,7 +4,11 @@ import React from "react";
 import Image from "next/image";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
+import Badge from "@/icons/badge";
+import Handshake from "@/icons/handshake";
 import ServicesSection from "../components/ServicesSection";
+import Vacuum from "@/icons/vacuum";
+import Maid from "@/icons/maid";
 
 export default function Home() {
   return (
@@ -22,8 +26,7 @@ export default function Home() {
         <div className="flex items-center justify-center">
           <div className=" flex flex-col md:w-4/5 text-center items-center">
             <h1 className="font-bold text-xl md:text-3xl mb-2 md:mb-10">
-              GUARANTEED TO LEAVE IT
-              <br /> ALL CLEAN
+              IT&apos;S ALL CLEAN NOW
             </h1>
             <p className="w-4/5 mb-4 md:mb-10 text-sm md:text-xl font-normal">
               We clean your houses in an out, because we know you don&apos;t
@@ -51,18 +54,25 @@ export default function Home() {
           your time back and your home is worry-free. Contact us today for a
           quote!
         </p>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center flex items-center justify-items-center">
-            Our customers are our passion
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-3 md:gap-8 lg:gap-12 lg:mx-4">
+          <div className="bg-white rounded-xl p-4 md:p-8 lg:p-8 text-center flex flex-col items-center justify-items-center">
+            <Badge />
+            <br />
+            <strong>Trustworthy</strong>
+            Our customers trusts us with passion!
           </div>
-          <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center flex items-center justify-items-center">
-            We advocate for our employees
+          <div className="bg-white rounded-xl p-6 md:p-8 lg:p-8 text-center flex flex-col items-center justify-items-center">
+            {/* <Handshake /> */}
+            <Maid />
+            <br />
+            <strong>Reliable</strong>
+            We are the most reliable out there!
           </div>
-          <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center flex items-center justify-items-center">
-            Accountability is important to us
-          </div>
-          <div className="bg-white min-h-[220px] rounded-xl p-6 md:p-12 text-center flex items-center justify-items-center">
-            We support the communities in which we live
+          <div className="bg-white rounded-xl p-6 md:p-8 lg:p-8 text-center flex flex-col items-center justify-items-center">
+            <Vacuum />
+            <br />
+            <strong>Quality</strong>
+            You won&apos;t believe the quality of our services!
           </div>
         </div>
       </div>
@@ -71,7 +81,7 @@ export default function Home() {
         <Heading
           align="left"
           className="text-4xl"
-          label="Placeholder section #1"
+          label="Placeholder section #1 > Replace with Stock Photo - See Trello"
         />
       </div>
 

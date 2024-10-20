@@ -4,6 +4,8 @@ import React from "react";
 import Button from "../Button";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="flex flex-col justify-between bg-secondary-grey px-2 sm:px-4 md:px-10 lg:px-20 xl:px-40 py-3 md:py-6 items-center text-sm">
       <div className="w-[calc(100%-3rem)] md:w-3/4 flex mb-6 mt-3 justify-between">
@@ -29,7 +31,7 @@ export default function Footer() {
         </div>
       </div>
       <p className="text-sm text-center">
-        © 2024 AllClean ATX Cleaning Service.
+        © {currentYear} AllClean ATX Cleaning Service.
         <br /> All Rights Reserved.
       </p>
     </div>
