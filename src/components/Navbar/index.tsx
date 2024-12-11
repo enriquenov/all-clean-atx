@@ -59,7 +59,7 @@ export default function Navbar() {
       className={classNames("px-4 py-2", underlineHoverClass, {
         ["ml-8"]: !isMenuVisible,
       })}
-      label="FAQ"
+      label="FAQs"
       id={isMenuVisible ? "menu-item-2" : undefined}
       role={isMenuVisible ? "menuitem" : undefined}
       href="/faqs"
