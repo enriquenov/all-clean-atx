@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
 import Badge from "@/icons/badge";
-import Handshake from "@/icons/handshake";
+// import Handshake from "@/icons/handshake";
 import ServicesSection from "../components/ServicesSection";
 import Vacuum from "@/icons/vacuum";
 import Maid from "@/icons/maid";
@@ -16,7 +16,7 @@ export default function Home() {
       <div className="my-8 md:my-20 mx-8 sm:mx-10 md:mx-20 max-w-6xl grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-2">
         <div className="rounded-3xl overflow-hidden">
           <Image
-            src="/cleaning-lady-cover.png"
+            src="/white-kitchen.jpg"
             alt="Cover photo of a cleaning lady"
             width={800}
             height={120}
@@ -26,7 +26,7 @@ export default function Home() {
         <div className="flex items-center justify-center">
           <div className=" flex flex-col md:w-4/5 text-center items-center">
             <h1 className="font-bold text-xl md:text-3xl mb-2 md:mb-10">
-              IT&apos;S ALL CLEAN NOW
+              IT&apos;S ALL CLEAN NOW !
             </h1>
             <p className="w-4/5 mb-4 md:mb-10 text-sm md:text-xl font-normal">
               We clean your houses in an out, because we know you don&apos;t
@@ -77,13 +77,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-w-7xl min-h-96 shadow-standard rounded-3xl mx-6 w-[calc(100%-3rem)] md:w-3/4 p-6 md:p-12 mb-10 md:mb-20">
-        <Heading
-          align="left"
-          className="text-4xl"
-          label="Placeholder section #1 > Replace with Stock Photo - See Trello"
-        />
-      </div>
+      <div className="bg-kitchen-countertop bg-no-repeat bg-center bg-cover min-h-96 shadow-standard mx-6 w-full p-6 md:p-12 mb-10 md:mb-20" />
 
       {/*******************************
        ******* Services Section *******

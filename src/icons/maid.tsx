@@ -100,7 +100,7 @@ export default function Maid(props: Props) {
         />
         <circle
           stroke="#231f20"
-          stroke-width="3px"
+          strokeWidth="3px"
           fill="none"
           strokeMiterlimit="10"
           cx="48.43"
