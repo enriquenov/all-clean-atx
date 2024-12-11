@@ -52,9 +52,9 @@ export default function Footer() {
         </div>
       </div>
       <p className="text-sm text-center">
-        © {currentYear} <span className="text-black font-bold">All</span>
-        <span className="text-brand-green font-bold"> Clean</span>{" "}
-        <span className="text-black font-bold">ATX</span> Cleaning Service.
+        © {currentYear} <span className="text-black font-semibold">All</span>
+        <span className="text-brand-green font-semibold"> Clean</span>{" "}
+        <span className="text-black font-semibold">ATX</span> Cleaning Service.
         <br /> All Rights Reserved.
       </p>
     </div>
