@@ -77,7 +77,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-kitchen-countertop bg-no-repeat bg-center bg-cover min-h-96 shadow-standard mx-6 w-full p-6 md:p-12 mb-10 md:mb-20" />
+      <div className="w-full mb-10 md:mb-20 opacity-75">
+        <div className="bg-kitchen-countertop bg-no-repeat bg-left bg-cover min-h-96 shadow-standard w-full p-6 md:p-12" />
+      </div>
 
       {/*******************************
        ******* Services Section *******

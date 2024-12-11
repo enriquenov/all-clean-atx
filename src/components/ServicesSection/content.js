@@ -154,7 +154,7 @@ export const BASEBOARDS = {
 export const CARPET = {
   process: {
     title:
-      "This service can be ordered alone,or in addition to other services.",
+      "This service can be ordered alone, or in addition to other services.",
     items: [
       "We use Hoover PowerDash Advanced Compact Carpet Cleaner Machines with above-floor cleaning, for carpet and upholstery, carpet shampooer, stain and odor remover combined with Advanced Oxy Solution for the best results to make your floors like new.",
     ],
